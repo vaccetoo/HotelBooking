@@ -1,6 +1,8 @@
 ﻿using HotelBooking.Infrastructure.Data;
 using HotelBooking.Infrastructure.Data.Models;
+using HotelBooking.Infrastructure.Data.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -32,6 +34,8 @@ namespace Microsoft.Extensions.DependencyInjection
 
 		public static IServiceCollection AddApplicationServices(this IServiceCollection services)
 		{
+			services.AddTransient<IEmailSender, DummyEmailSender>();
+
 			return services;
 		}
 	}
