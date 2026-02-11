@@ -13,11 +13,11 @@ namespace HotelBooking.Infrastructure.Data.Extensions
 				if (typeof(ISoftDeletable).IsAssignableFrom(entityType.ClrType))
 				{
 					var method = typeof(ModelBuilderExtensions)
-						.GetMethod(nameof(SetSoftDeleteFilter),
-							BindingFlags.NonPublic | BindingFlags.Static)
-						?.MakeGenericMethod(entityType.ClrType);
+								.GetMethod(nameof(SetSoftDeleteFilter), 
+								BindingFlags.NonPublic | BindingFlags.Static)
+								?? throw new InvalidOperationException("SetSoftDeleteFilter method not found");
 
-					method?.Invoke(null, new object[] { modelBuilder });
+					method.MakeGenericMethod(entityType.ClrType).Invoke(null, new object[] { modelBuilder });
 				}
 			}
 		}
