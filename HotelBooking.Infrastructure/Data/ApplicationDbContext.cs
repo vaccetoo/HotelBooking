@@ -1,4 +1,5 @@
-﻿using HotelBooking.Infrastructure.Data.Extensions;
+﻿using HotelBooking.Infrastructure.Data.Configurations;
+using HotelBooking.Infrastructure.Data.Extensions;
 using HotelBooking.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -22,6 +23,8 @@ namespace HotelBooking.Infrastructure.Data
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
+			builder.ApplyConfiguration(new ReservationFacilitiesConfiguration());
+
 			builder.ApplySoftDeleteQueryFilters();
 
 			base.OnModelCreating(builder);
