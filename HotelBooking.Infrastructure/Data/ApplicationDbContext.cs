@@ -13,6 +13,13 @@ namespace HotelBooking.Infrastructure.Data
 			
 		}
 
+		public DbSet<Room> Rooms { get; set; } = null!;
+		public DbSet<Facility> Facilities { get; set; } = null!;
+		public DbSet<Review> Reviews { get; set; } = null!;
+		public DbSet<Reservation> Reservations { get; set; } = null!;
+		public DbSet<ReservationFacility> ReservationFacilities { get; set; } = null!;
+		public DbSet<Payment> Payments { get; set; } = null!;
+
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			builder.ApplySoftDeleteQueryFilters();
