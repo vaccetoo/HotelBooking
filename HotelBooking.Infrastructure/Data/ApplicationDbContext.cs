@@ -23,9 +23,8 @@ namespace HotelBooking.Infrastructure.Data
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
-			builder.ApplyConfiguration(new ReservationFacilitiesConfiguration());
-
 			builder.ApplySoftDeleteQueryFilters();
+			builder.ApplySeedData();
 
 			base.OnModelCreating(builder);
 		}
