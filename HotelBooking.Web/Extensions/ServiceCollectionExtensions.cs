@@ -1,4 +1,6 @@
-﻿using HotelBooking.Infrastructure.Data;
+﻿using HotelBooking.Core.Contracts;
+using HotelBooking.Core.Services;
+using HotelBooking.Infrastructure.Data;
 using HotelBooking.Infrastructure.Data.Contracts;
 using HotelBooking.Infrastructure.Data.Models;
 using HotelBooking.Infrastructure.Data.Services;
@@ -37,6 +39,7 @@ namespace Microsoft.Extensions.DependencyInjection
 		{
 			services.AddTransient<IEmailSender, DummyEmailSender>();
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
+			services.AddScoped<IRoomService, RoomService>();
 
 			return services;
 		}
