@@ -13,6 +13,7 @@ namespace HotelBooking.Web.Controllers
 			_roomService = roomService;
 		}
 
+		[HttpGet]
 		public async Task<IActionResult> Index()
 		{
 			IEnumerable<RoomListViewModel> model =

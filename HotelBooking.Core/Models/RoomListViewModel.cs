@@ -1,5 +1,5 @@
 ﻿using HotelBooking.Infrastructure.Data.Enums;
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace HotelBooking.Core.Models
 {
@@ -7,12 +7,15 @@ namespace HotelBooking.Core.Models
 	{
 		public Guid Id { get; set; }
 
-		public string RoomNumber { get; set; } = null!;
+		[DisplayName("Room number")]
+		public string RoomNumber { get; set; } = null!;	
 
 		public RoomType Type { get; set; }
 
+		[DisplayName("Capacity")]
 		public int RoomCapacity { get; set; }
 
+		[DisplayName("Price per night")]
 		public decimal PricePerNight { get; set; }
 	}
 }
