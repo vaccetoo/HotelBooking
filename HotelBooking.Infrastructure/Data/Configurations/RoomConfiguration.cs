@@ -15,7 +15,7 @@ namespace HotelBooking.Infrastructure.Data.Configurations
 				{
 					Id = Room101Id,
 					RoomNumber = "101",
-					Type = RoomType.SingleRoom,
+					Type = RoomType.Single,
 					RoomCapacity = 1,
 					PricePerNight = 50M,
 					IsDeleted = false
@@ -24,7 +24,7 @@ namespace HotelBooking.Infrastructure.Data.Configurations
 				{
 					Id = Room102Id,
 					RoomNumber = "102",
-					Type = RoomType.DoubleRoom,
+					Type = RoomType.Double,
 					RoomCapacity = 2,
 					PricePerNight = 90M,
 					IsDeleted = false
