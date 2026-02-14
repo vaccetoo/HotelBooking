@@ -2,8 +2,8 @@
 {
 	public enum RoomType
 	{
-		SingleRoom = 0,
-		DoubleRoom = 1,
+		Single = 0,
+		Double = 1,
 		Apartment = 2,
 		VIP = 3
 	}
